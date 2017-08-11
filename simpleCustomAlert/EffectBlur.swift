@@ -26,12 +26,12 @@ class EffectBlur:
             effectView.removeFromSuperview()
         }
         
-        let screenWidth = UIScreen.main.bounds.size.width
-        let screenHeight = UIScreen.main.bounds.size.height
-        
+        print(AppSize.screenWidth)
+        print(AppSize.screenHeight)
+
         // Blurエフェクトを適用するEffectViewを作成.
         effectView = UIVisualEffectView(effect: effect)
-        effectView.frame = CGRect(x:0, y:0, width: screenWidth, height: screenHeight)
+        effectView.frame = CGRect(x:0, y:0, width: AppSize.screenWidth, height: AppSize.screenHeight)
         effectView.center = uiView.center
         effectView.layer.masksToBounds = true
         effectView.layer.cornerRadius = 20.0

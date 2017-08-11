@@ -22,8 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E36030E11F3DFB23003024B6 /* MyAlertController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyAlertController.storyboard; path = "../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.storyboard"; sourceTree = "<group>"; };
-		E36030E21F3DFB23003024B6 /* MyAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAlertController.swift; path = "../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.swift"; sourceTree = "<group>"; };
+		E36030E11F3DFB23003024B6 /* MyAlertController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyAlertController.storyboard; path = "../../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.storyboard"; sourceTree = "<group>"; };
+		E36030E21F3DFB23003024B6 /* MyAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAlertController.swift; path = "../../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.swift"; sourceTree = "<group>"; };
 		E36030E51F3E0B18003024B6 /* sinlgleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sinlgleAlert.storyboard; sourceTree = "<group>"; };
 		E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = doubleAlert.storyboard; sourceTree = "<group>"; };
 		E3AA10B11F3DD63D00EC1E8E /* simpleCustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,7 +34,7 @@
 		E3AA10BE1F3DD63D00EC1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA10C01F3DD63D00EC1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3AA10CB1F3DD6D700EC1E8E /* EffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectBlur.swift; sourceTree = "<group>"; };
-		E3AA10D51F3DD80200EC1E8E /* opening_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = opening_main.png; path = ../../tripuuu/app/www/images/opening_main.png; sourceTree = "<group>"; };
+		E3AA10D51F3DD80200EC1E8E /* opening_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = opening_main.png; path = ../../../tripuuu/app/www/images/opening_main.png; sourceTree = "<group>"; };
 		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,14 +83,15 @@
 		E3AA10D71F3DD81A00EC1E8E /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				E3AA10CB1F3DD6D700EC1E8E /* EffectBlur.swift */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
+				E3AA10CB1F3DD6D700EC1E8E /* EffectBlur.swift */,
 				E36030E11F3DFB23003024B6 /* MyAlertController.storyboard */,
-				E36030E51F3E0B18003024B6 /* sinlgleAlert.storyboard */,
-				E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */,
 				E36030E21F3DFB23003024B6 /* MyAlertController.swift */,
+				E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */,
+				E36030E51F3E0B18003024B6 /* sinlgleAlert.storyboard */,
 			);
 			name = Alert;
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		E3AA10D81F3DD83400EC1E8E /* images */ = {
@@ -99,6 +100,7 @@
 				E3AA10D51F3DD80200EC1E8E /* opening_main.png */,
 			);
 			name = images;
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

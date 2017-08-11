@@ -19,26 +19,26 @@ class EffectBlur:
     /*
      *	UIBlurEffectの表示
      */
-    static func showEffectBlur(_ uiView: UIView = (UIApplication.shared.topViewController?.view)!) {
-        
-        print(uiView)
-        if effectView != nil {
-            effectView.removeFromSuperview()
-        }
-        
-        print(AppSize.screenWidth)
-        print(AppSize.screenHeight)
-
-        // Blurエフェクトを適用するEffectViewを作成.
-        effectView = UIVisualEffectView(effect: effect)
-        effectView.frame = CGRect(x:0, y:0, width: AppSize.screenWidth, height: AppSize.screenHeight)
-        effectView.center = uiView.center
-        effectView.layer.masksToBounds = true
-        effectView.layer.cornerRadius = 20.0
-        uiView.addSubview(effectView)
-        
-    }
-    
+//    static func showEffectBlur(_ uiView: UIView = (UIApplication.shared.topViewController?.view)!) {
+//        
+//        print(uiView)
+//        if effectView != nil {
+//            effectView.removeFromSuperview()
+//        }
+//        
+//        print(AppSize.screenWidth)
+//        print(AppSize.screenHeight)
+//
+//        // Blurエフェクトを適用するEffectViewを作成.
+//        effectView = UIVisualEffectView(effect: effect)
+//        effectView.frame = CGRect(x:0, y:0, width: AppSize.screenWidth, height: AppSize.screenHeight)
+//        effectView.center = uiView.center
+//        effectView.layer.masksToBounds = true
+//        effectView.layer.cornerRadius = 20.0
+//        uiView.addSubview(effectView)
+//        
+//    }
+//    
     
     /*
      * UIBlurEffectの非表示

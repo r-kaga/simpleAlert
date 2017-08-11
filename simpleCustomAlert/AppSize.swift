@@ -15,4 +15,11 @@ struct AppSize {
     static var toolBarHeight: CGFloat { return 44 }
     static var statusBarHeight: CGFloat { return UIApplication.shared.statusBarFrame.height }
     static var statusBarAndNavigationBarHeight: CGFloat { return statusBarHeight + navigationBarHeight }
+    
+    
+    static var window: CGRect {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        return (app.window?.frame)!
+    }
+    
 }

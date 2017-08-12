@@ -237,7 +237,8 @@
 //        alert.messageText = message
 //        alert.buttonType = .SingleButton(buttonTitle)
 //        alert.handler = handler
-//        
+//        alert.modalPresentationStyle = .overCurrentContext.
+
 //        vc.present(alert, animated: false, completion: nil)
 //    }
 //    
@@ -248,7 +249,7 @@
 //        alert.messageText = message
 //        alert.buttonType = .DoubleButton(cancelTitle, cancelTitle)
 //        alert.handler = handler
-//        
+//        alert.modalPresentationStyle = .overCurrentContext.
 //        vc.present(alert, animated: true, completion: nil)
 //    }
 //}

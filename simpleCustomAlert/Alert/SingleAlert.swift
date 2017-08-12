@@ -4,9 +4,8 @@ enum SingleAlertAction {
     case Accept
 }
 
-enum MyAlertControllerType {
+enum SingleAlertControllerType {
 	case SingleButton(String)
-	case DoubleButton(String, String)
 }
 
 class SingleAlert: UIViewController {
@@ -17,7 +16,7 @@ class SingleAlert: UIViewController {
     
     @IBOutlet weak var singleViewAcceptButton: UIButton!
 
-    var buttonType = MyAlertControllerType.SingleButton("")
+    var buttonType = SingleAlertControllerType.SingleButton("")
 
     var titleText: String = ""
     var messageText: String = ""

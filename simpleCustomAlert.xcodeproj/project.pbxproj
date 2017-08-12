@@ -10,11 +10,12 @@
 		E36030E31F3DFB23003024B6 /* MyAlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030E11F3DFB23003024B6 /* MyAlertController.storyboard */; };
 		E36030E41F3DFB23003024B6 /* MyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030E21F3DFB23003024B6 /* MyAlertController.swift */; };
 		E36030E61F3E0B18003024B6 /* SingleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */; };
-		E36030E81F3E0B35003024B6 /* doubleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */; };
 		E36030EA1F3E127D003024B6 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030E91F3E127C003024B6 /* SCLAlertView.swift */; };
 		E36030EC1F3E129D003024B6 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030EB1F3E129D003024B6 /* SCLExtensions.swift */; };
 		E36030F01F3EA847003024B6 /* SingleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030EF1F3EA847003024B6 /* SingleAlert.swift */; };
 		E36030F21F3EA8BA003024B6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030F11F3EA8BA003024B6 /* Alert.swift */; };
+		E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030F31F3EC021003024B6 /* DoubleAlert.swift */; };
+		E36030F81F3EC060003024B6 /* DoubleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */; };
 		E3AA10B51F3DD63D00EC1E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */; };
 		E3AA10B71F3DD63D00EC1E8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */; };
 		E3AA10BA1F3DD63D00EC1E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA10B81F3DD63D00EC1E8E /* Main.storyboard */; };
@@ -29,11 +30,12 @@
 		E36030E11F3DFB23003024B6 /* MyAlertController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyAlertController.storyboard; path = "../../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.storyboard"; sourceTree = "<group>"; };
 		E36030E21F3DFB23003024B6 /* MyAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAlertController.swift; path = "../../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.swift"; sourceTree = "<group>"; };
 		E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleAlert.storyboard; sourceTree = "<group>"; };
-		E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = doubleAlert.storyboard; sourceTree = "<group>"; };
 		E36030E91F3E127C003024B6 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		E36030EB1F3E129D003024B6 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		E36030EF1F3EA847003024B6 /* SingleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAlert.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		E36030F11F3EA8BA003024B6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		E36030F31F3EC021003024B6 /* DoubleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleAlert.swift; sourceTree = "<group>"; };
+		E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DoubleAlert.storyboard; sourceTree = "<group>"; };
 		E3AA10B11F3DD63D00EC1E8E /* simpleCustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 		E36030EE1F3EA81D003024B6 /* DoubleAlert */ = {
 			isa = PBXGroup;
 			children = (
+				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
+				E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */,
 			);
 			name = DoubleAlert;
 			sourceTree = "<group>";
@@ -113,7 +117,6 @@
 				E36030ED1F3EA815003024B6 /* SingleAlert */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
 				E3AA10CB1F3DD6D700EC1E8E /* EffectBlur.swift */,
-				E36030E71F3E0B35003024B6 /* doubleAlert.storyboard */,
 				E36030E91F3E127C003024B6 /* SCLAlertView.swift */,
 				E36030EB1F3E129D003024B6 /* SCLExtensions.swift */,
 				E36030F11F3EA8BA003024B6 /* Alert.swift */,
@@ -189,11 +192,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36030F81F3EC060003024B6 /* DoubleAlert.storyboard in Resources */,
 				E3AA10BF1F3DD63D00EC1E8E /* LaunchScreen.storyboard in Resources */,
 				E3AA10D61F3DD80200EC1E8E /* opening_main.png in Resources */,
 				E3AA10BC1F3DD63D00EC1E8E /* Assets.xcassets in Resources */,
 				E36030E31F3DFB23003024B6 /* MyAlertController.storyboard in Resources */,
-				E36030E81F3E0B35003024B6 /* doubleAlert.storyboard in Resources */,
 				E36030E61F3E0B18003024B6 /* SingleAlert.storyboard in Resources */,
 				E3AA10BA1F3DD63D00EC1E8E /* Main.storyboard in Resources */,
 			);
@@ -211,6 +214,7 @@
 				E36030EC1F3E129D003024B6 /* SCLExtensions.swift in Sources */,
 				E3AA10CC1F3DD6D700EC1E8E /* EffectBlur.swift in Sources */,
 				E36030E41F3DFB23003024B6 /* MyAlertController.swift in Sources */,
+				E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */,
 				E3AA10DA1F3DDB8100EC1E8E /* AppSize.swift in Sources */,
 				E36030EA1F3E127D003024B6 /* SCLAlertView.swift in Sources */,
 				E36030F01F3EA847003024B6 /* SingleAlert.swift in Sources */,

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Alert Controller-->
+        <!--View Controller-->
         <scene sceneID="NBa-B8-M7p">
             <objects>
-                <viewController storyboardIdentifier="doubleAlert" modalPresentationStyle="overCurrentContext" id="rlY-ie-gNy" customClass="MyAlertController" customModule="simpleCustomAlert" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doubleAlert" modalPresentationStyle="overCurrentContext" id="rlY-ie-gNy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RAB-xr-Kbe"/>
                         <viewControllerLayoutGuide type="bottom" id="E0r-Fl-xYS"/>

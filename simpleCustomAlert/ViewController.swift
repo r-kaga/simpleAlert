@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         // 画面にbluEffectをかける
 //        EffectBlur.showEffectBlur()
-        MyAlertController.show(self, title: "タイトル", message: "メッセージを\n表示しています", buttonTitle: "YES") { action in
+        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています", buttonTitle: "YES") { action in
             print(action)
         }
         

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E36030E41F3DFB23003024B6 /* MyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030E21F3DFB23003024B6 /* MyAlertController.swift */; };
+		E32CB1D31F4008630080D10D /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CB1D21F4008630080D10D /* CustomAlert.swift */; };
 		E36030E61F3E0B18003024B6 /* SingleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */; };
 		E36030F01F3EA847003024B6 /* SingleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030EF1F3EA847003024B6 /* SingleAlert.swift */; };
 		E36030F21F3EA8BA003024B6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030F11F3EA8BA003024B6 /* Alert.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E36030E21F3DFB23003024B6 /* MyAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAlertController.swift; path = "../../../simway-dieter/iOS/simway/CustomAlert/MyAlertController.swift"; sourceTree = "<group>"; };
+		E32CB1D21F4008630080D10D /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleAlert.storyboard; sourceTree = "<group>"; };
 		E36030EF1F3EA847003024B6 /* SingleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAlert.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		E36030F11F3EA8BA003024B6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -56,19 +56,19 @@
 		E36030ED1F3EA815003024B6 /* SingleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030EF1F3EA847003024B6 /* SingleAlert.swift */,
 				E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */,
+				E36030EF1F3EA847003024B6 /* SingleAlert.swift */,
 			);
-			name = SingleAlert;
+			path = SingleAlert;
 			sourceTree = "<group>";
 		};
 		E36030EE1F3EA81D003024B6 /* DoubleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
 				E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */,
+				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
 			);
-			name = DoubleAlert;
+			path = DoubleAlert;
 			sourceTree = "<group>";
 		};
 		E3AA10A81F3DD63C00EC1E8E = {
@@ -105,12 +105,12 @@
 		E3AA10D71F3DD81A00EC1E8E /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030E21F3DFB23003024B6 /* MyAlertController.swift */,
+				E32CB1D21F4008630080D10D /* CustomAlert.swift */,
 				E36030EE1F3EA81D003024B6 /* DoubleAlert */,
 				E36030ED1F3EA815003024B6 /* SingleAlert */,
+				E36030F11F3EA8BA003024B6 /* Alert.swift */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
 				E3AA10CB1F3DD6D700EC1E8E /* EffectBlur.swift */,
-				E36030F11F3EA8BA003024B6 /* Alert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -202,11 +202,11 @@
 				E36030F21F3EA8BA003024B6 /* Alert.swift in Sources */,
 				E3AA10B71F3DD63D00EC1E8E /* ViewController.swift in Sources */,
 				E3AA10CC1F3DD6D700EC1E8E /* EffectBlur.swift in Sources */,
-				E36030E41F3DFB23003024B6 /* MyAlertController.swift in Sources */,
 				E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */,
 				E3AA10DA1F3DDB8100EC1E8E /* AppSize.swift in Sources */,
 				E36030F01F3EA847003024B6 /* SingleAlert.swift in Sources */,
 				E3AA10B51F3DD63D00EC1E8E /* AppDelegate.swift in Sources */,
+				E32CB1D31F4008630080D10D /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

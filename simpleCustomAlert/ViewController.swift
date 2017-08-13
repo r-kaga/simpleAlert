@@ -12,38 +12,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
     }
+    
     
     @IBAction func showAlert(_ sender: Any) {
         
-        
-        //        MyAlertController.show(self, title: "タイトル", message: "メッセージを\n表示しています", cancelTitle: "キャンセル", acceptTitle: "おっけー") { action in
-        //            switch action {
-        //                case .Accept : print("accept!")
-        //                case .Cancel : print("cancel!")
-        //            }
-        //        }
-        
-        // 画面にbluEffectをかける
 //        EffectBlur.showEffectBlur()
-        DoubleAlert.show(presentintViewController: self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+        DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
             switch action {
                 case .Accept : print("accept!")
                 case .Cancel : print("cancel!")
             }
         }
         
+//        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+//
+//            print(action)
+//        }
         
-        
+
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
 
 }

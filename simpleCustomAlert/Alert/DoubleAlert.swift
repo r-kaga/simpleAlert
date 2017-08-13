@@ -1,15 +1,11 @@
 import UIKit
 
-enum DoubleAlertAction {
-    case Accept
-    case Cancel
-}
 
 enum DoubleAlertControllerType {
     case DoubleButton(String, String)
 }
 
-class DoubleAlert: UIViewController {
+class DoubleAlert: CustomAlert {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,14 +19,12 @@ class DoubleAlert: UIViewController {
     var titleText: String = ""
     var messageText: String = ""
     
-    typealias AlertAction = (_ action: DoubleAlertAction)->()
-    var handler: AlertAction?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doubleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-        doubleViewCancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        doubleViewAcceptButton.addTarget(self, action: #selector(super.acceptButtonTapped), for: .touchUpInside)
+        doubleViewCancelButton.addTarget(self, action: #selector(super.cancelButtonTapped), for: .touchUpInside)
         
         titleLabel.text = titleText
         messageLabel.text = messageText
@@ -42,25 +36,14 @@ class DoubleAlert: UIViewController {
         
         }
         
-        animationContentView(hidden: true)
+        super.animationContentView(hidden: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animationContentView(hidden: false)
+        super.animationContentView(hidden: false)
     }
-    
-    func animationContentView(hidden: Bool, completed: (()->())? = nil) {
-        let alpha: CGFloat
-        if hidden { alpha = 0 }
-        else { alpha = 1 }
-        
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.alpha = alpha
-        }) { _ in
-            completed?()
-        }
-    }
+
   
     private func addDoubleButton(cancelTitle: String, acceptTitle: String) {
         
@@ -69,33 +52,10 @@ class DoubleAlert: UIViewController {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 }
 
 
-/**
- *  Button actions ---------------------
- */
-extension DoubleAlert {
-    
-    func acceptButtonTapped() {
-        animationContentView(hidden: true) {
-            self.handler?(.Accept)
-            self.dismiss(animated: false, completion: nil)
-        }
-    }
-    
-    func cancelButtonTapped() {
-        animationContentView(hidden: true) {
-            self.handler?(.Cancel)
-            self.dismiss(animated: false, completion: nil)
-        }
-    }
-    
-}
 
 
 /**

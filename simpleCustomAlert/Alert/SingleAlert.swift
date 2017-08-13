@@ -1,14 +1,10 @@
 import UIKit
 
-enum SingleAlertAction {
-    case Accept
-}
-
 enum SingleAlertControllerType {
 	case SingleButton(String)
 }
 
-class SingleAlert: UIViewController {
+class SingleAlert: CustomAlert {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,39 +17,25 @@ class SingleAlert: UIViewController {
     var titleText: String = ""
     var messageText: String = ""
     
-    typealias AlertAction = (_ action: SingleAlertAction)->()
-    var handler: AlertAction?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+        singleViewAcceptButton.addTarget(self, action: #selector(super.acceptButtonTapped), for: .touchUpInside)
         
         titleLabel.text = titleText
         messageLabel.text = messageText
         
-        print(title)
         addSingleButton(title: title ?? "OK")
 
-        animationContentView(hidden: true)
+        super.animationContentView(hidden: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animationContentView(hidden: false)
+        super.animationContentView(hidden: false)
     }
-    
-    func animationContentView(hidden: Bool, completed: (()->())? = nil) {
-        let alpha: CGFloat
-        if hidden { alpha = 0 }
-        else { alpha = 1 }
-        
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.alpha = alpha
-        }) { _ in
-            completed?()
-        }
-    }
+
     
     private func addSingleButton(title: String) {
 //        singleViewAcceptButton.frame.origin = CGPoint(x: 0, y: 120)
@@ -61,28 +43,9 @@ class SingleAlert: UIViewController {
 //        singleViewAcceptButton.setTitle(title, for: .normal)
     }
     
-
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
-
-/**
- *  Button actions ---------------------
- */
-extension SingleAlert {
-    
-    func acceptButtonTapped() {
-        animationContentView(hidden: true) {
-            self.handler?(.Accept)
-            self.dismiss(animated: false, completion: nil)
-        }
-    }
-
-}
 
 
 /**

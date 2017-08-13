@@ -104,7 +104,15 @@ extension DoubleAlert {
 extension DoubleAlert {
     
 
-    class func show(presentintViewController vc: UIViewController, title: String, message: String, cancelTitle: String = "Cancel", acceptTitle: String = "OK", handler: AlertAction?) {
+    /*
+         DoubleAlert.show(presentintViewController: self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+             switch action {
+                 case .Accept : print("accept!")
+                 case .Cancel : print("cancel!")
+             }
+         }
+     */
+    class func show(_ vc: UIViewController, title: String, message: String, cancelTitle: String = "Cancel", acceptTitle: String = "OK", handler: AlertAction?) {
         guard let alert = UIStoryboard(name: "DoubleAlert", bundle: nil).instantiateInitialViewController()
             as? DoubleAlert else { return }
         alert.titleText = title

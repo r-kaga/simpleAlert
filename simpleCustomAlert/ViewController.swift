@@ -28,9 +28,14 @@ class ViewController: UIViewController {
         
         // 画面にbluEffectをかける
 //        EffectBlur.showEffectBlur()
-        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています", buttonTitle: "YES") { action in
-            print(action)
+        DoubleAlert.show(presentintViewController: self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+            switch action {
+                case .Accept : print("accept!")
+                case .Cancel : print("cancel!")
+            }
         }
+        
+        
         
         
     }

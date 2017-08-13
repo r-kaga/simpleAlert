@@ -90,7 +90,12 @@ extension SingleAlert {
  */
 extension SingleAlert {
     
-    class func show(_ vc: UIViewController, title: String, message: String, buttonTitle: String, handler: AlertAction?) {
+    /*
+     SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+        print(action)
+     }
+     */
+    class func show(_ vc: UIViewController, title: String, message: String, buttonTitle: String = "OK", handler: AlertAction?) {
         guard let alert = UIStoryboard(name: "SingleAlert", bundle: nil).instantiateInitialViewController()
             as? SingleAlert else { return }
         alert.titleText = title

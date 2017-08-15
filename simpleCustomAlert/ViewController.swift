@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert(_ sender: Any) {
         
-//        EffectBlur.showEffectBlur()
         DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
             switch action {
                 case .Accept : print("accept!")
@@ -25,11 +24,7 @@ class ViewController: UIViewController {
             }
         }
         
-//        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
-//
-//            print(action)
-//        }
-        
+
 
         
     }

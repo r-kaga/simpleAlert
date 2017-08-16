@@ -13,7 +13,6 @@
         <!--Double Alert-->
         <scene sceneID="oFo-dd-Gpo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b4i-47-qhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="overCurrentContext" id="xfj-5Z-Tbe" customClass="DoubleAlert" customModule="simpleCustomAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AZf-b3-rG3"/>
@@ -23,14 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae0-j9-txw">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eU9-ya-thn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IdR-Sc-DJf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcN-95-ucU">
                                 <rect key="frame" x="21" y="90" width="333" height="397"/>
                                 <subviews>
@@ -110,13 +105,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ae0-j9-txw" firstAttribute="leading" secondItem="Yon-fb-yOK" secondAttribute="leading" id="4CS-B3-gKG"/>
-                            <constraint firstItem="ae0-j9-txw" firstAttribute="top" secondItem="Yon-fb-yOK" secondAttribute="top" id="4s3-Qs-Wax"/>
                             <constraint firstItem="gcN-95-ucU" firstAttribute="top" secondItem="AZf-b3-rG3" secondAttribute="bottom" constant="70" id="6vV-yf-OEB"/>
-                            <constraint firstItem="ae0-j9-txw" firstAttribute="bottom" secondItem="H76-Ch-SYL" secondAttribute="top" id="R47-1h-ZLi"/>
                             <constraint firstItem="gcN-95-ucU" firstAttribute="leading" secondItem="Yon-fb-yOK" secondAttribute="leadingMargin" constant="5" id="XBI-cG-wkY"/>
+                            <constraint firstItem="eU9-ya-thn" firstAttribute="top" secondItem="Yon-fb-yOK" secondAttribute="top" id="gI7-UB-iT0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gcN-95-ucU" secondAttribute="trailing" constant="5" id="gIQ-Un-uQm"/>
-                            <constraint firstAttribute="trailing" secondItem="ae0-j9-txw" secondAttribute="trailing" id="tun-E7-Aof"/>
+                            <constraint firstAttribute="trailing" secondItem="eU9-ya-thn" secondAttribute="trailing" id="hMm-k2-aQi"/>
+                            <constraint firstItem="H76-Ch-SYL" firstAttribute="top" secondItem="eU9-ya-thn" secondAttribute="bottom" id="iB9-9K-DQN"/>
+                            <constraint firstItem="eU9-ya-thn" firstAttribute="leading" secondItem="Yon-fb-yOK" secondAttribute="leading" id="oYQ-zj-R34"/>
                             <constraint firstItem="H76-Ch-SYL" firstAttribute="top" secondItem="gcN-95-ucU" secondAttribute="bottom" constant="180" id="xK2-ZB-laB"/>
                         </constraints>
                     </view>
@@ -128,6 +123,7 @@
                         <outlet property="titleLabel" destination="zSJ-Ax-PR1" id="5C4-2O-iKt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4i-47-qhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="751" y="-132"/>
         </scene>

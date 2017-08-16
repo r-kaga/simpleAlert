@@ -22,17 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zhn-GO-CDq">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5V-Sd-99K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="1cg-pb-hcD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnM-5F-WLV">
-                                <rect key="frame" x="46" y="170" width="283" height="347"/>
+                                <rect key="frame" x="46" y="120" width="283" height="367"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insert_comment.png" translatesAutoresizingMaskIntoConstraints="NO" id="vtE-fw-ykw">
                                         <rect key="frame" x="101.5" y="30" width="80" height="80"/>
@@ -48,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47o-2l-fh3">
-                                        <rect key="frame" x="40" y="282" width="203" height="50"/>
+                                        <rect key="frame" x="40" y="302" width="203" height="50"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bYD-Mu-9eK"/>
@@ -58,7 +53,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJr-HV-Dl3">
-                                        <rect key="frame" x="15" y="176" width="253" height="91"/>
+                                        <rect key="frame" x="15" y="176" width="253" height="111"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,10 +78,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="a5V-Sd-99K" secondAttribute="trailing" id="87p-Q4-axU"/>
                             <constraint firstItem="CnM-5F-WLV" firstAttribute="leading" secondItem="NkN-2p-xtT" secondAttribute="leadingMargin" constant="30" id="ExL-hB-vp5"/>
-                            <constraint firstItem="zdZ-fd-Azj" firstAttribute="top" secondItem="CnM-5F-WLV" secondAttribute="bottom" constant="150" id="eGG-0q-pd2"/>
+                            <constraint firstItem="a5V-Sd-99K" firstAttribute="top" secondItem="dHx-8e-e6C" secondAttribute="bottom" constant="-20" id="HWS-tg-bAn"/>
+                            <constraint firstItem="CnM-5F-WLV" firstAttribute="top" secondItem="dHx-8e-e6C" secondAttribute="bottom" constant="100" id="JNT-Q7-vXz"/>
+                            <constraint firstItem="zdZ-fd-Azj" firstAttribute="top" secondItem="a5V-Sd-99K" secondAttribute="bottom" id="Tdo-Rr-Ym8"/>
+                            <constraint firstItem="zdZ-fd-Azj" firstAttribute="top" secondItem="CnM-5F-WLV" secondAttribute="bottom" constant="180" id="eGG-0q-pd2"/>
+                            <constraint firstItem="a5V-Sd-99K" firstAttribute="leading" secondItem="NkN-2p-xtT" secondAttribute="leading" id="hor-hh-zL8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CnM-5F-WLV" secondAttribute="trailing" constant="30" id="jAX-I0-Sb8"/>
-                            <constraint firstItem="CnM-5F-WLV" firstAttribute="top" secondItem="dHx-8e-e6C" secondAttribute="bottom" constant="150" id="xKQ-NZ-D7E"/>
                         </constraints>
                     </view>
                     <connections>
@@ -98,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgA-2K-T1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637.5999999999999" y="-131.78410794602701"/>
+            <point key="canvasLocation" x="1637.5999999999999" y="-118.29085457271366"/>
         </scene>
     </scenes>
     <resources>

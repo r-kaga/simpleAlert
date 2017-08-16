@@ -12,16 +12,11 @@ enum AlertActions {
 
 class Alert: UIViewController {
     
-    var contentView = UIView()
-    
     var alertView = UIView()
-    
-    var effectBlurVie = UIVisualEffectView()
+    var contentView = UIView()
 
-    
     var singleButtonView = UIView()
     var singleViewAcceptButton = UIButton()
-    
     
     var doubleButtonView = UIView()
     
@@ -31,10 +26,13 @@ class Alert: UIViewController {
     var titleText: String = ""
     var messageText: String = ""
     
+    var titleLabel = UILabel()
+    var messageLabel = UILabel()
+    
+    var alertImage = UIImageView()
+    
     var buttonType = AlertControllerType.SingleButton("")
     
-    static var effect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-    static var effectView : UIVisualEffectView!
     
     typealias AlertAction = (_ action: AlertActions ) -> ()
     var handler: AlertAction?
@@ -42,6 +40,10 @@ class Alert: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+        doubleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+        doubleViewCancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         
         switch buttonType {
         case let .SingleButton(title) :
@@ -52,7 +54,6 @@ class Alert: UIViewController {
         }
         
         animationContentView(hidden: true)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,66 +79,195 @@ class Alert: UIViewController {
     
     
     func addSingleButton(title: String) {
+
+        contentView.frame = CGRect(x: 0,
+                                    y: 0,
+                                    width: AppSize.screenWidth / 1.2,
+                                    height: AppSize.screenHeight / 2)
+
+        contentView.center = CGPoint(x: AppSize.screenWidth / 2,
+                                   y: AppSize.screenHeight / 2)
         
-        print(AppSize.screenHeight)
-        print(AppSize.screenWidth)
+        contentView.backgroundColor = .white
         
-        print(AppSize.window)
+        singleViewAcceptButton.frame = CGRect(x: 0,
+                                           y: 0,
+                                           width: contentView.bounds.width / 1.2 ,
+                                           height: 50)
         
-        //        contentView.frame = CGRect(x: 0,
-        //                                    y: 0,
-        //                                    width: AppSize.screenWidth / 1.5,
-        //                                    height: AppSize.screenHeight / 1.5)
-        //
-        //        contentView.center = CGPoint(x: AppSize.screenWidth / 2,
-        //                                          y: AppSize.screenHeight / 2)
-        //
-        //		singleButtonView.frame = CGRect(x: 0,
-        //		                                y: 0,
-        //		                                width: contentView.frame.width,
-        //		                                height: singleButtonView.frame.height)
-        //
-        //		singleButtonView.center = CGPoint(x: contentView.bounds.width / 2,
-        //		                                  y: contentView.bounds.maxY - singleButtonView.bounds.height / 2)
-        //        singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-        //
-        //
-        //		contentView.addSubview(singleButtonView)
-        //        self.view.addSubview(contentView)
-        //
+        singleViewAcceptButton.center = CGPoint(x: contentView.bounds.width / 2,
+                                                y: contentView.bounds.maxY - singleViewAcceptButton.frame.height / 1.5)
+
+        singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+        singleViewAcceptButton.setTitleColor(.black, for: .normal)
+        singleViewAcceptButton.setTitle(title, for: .normal)
+        singleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+
+        singleViewAcceptButton.layer.masksToBounds = true
+        singleViewAcceptButton.layer.cornerRadius = 20.0
         
-        let app = UIApplication.shared.delegate as! AppDelegate
+        contentView.addSubview(singleViewAcceptButton)
+    
+        
+        
+        titleLabel.frame = CGRect(x: 0,
+                                y: 0,
+                                width: AppSize.screenWidth,
+                                height: AppSize.screenHeight / 2)
+        
+        titleLabel.center = CGPoint(x: contentView.bounds.width / 2,
+                                  y: contentView.bounds.height / 2)
+        
+        titleLabel.text = titleText
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        
+        contentView.addSubview(titleLabel)
+    
+        
+        messageLabel.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: AppSize.screenWidth,
+                                  height: AppSize.screenHeight / 2)
+        
+        messageLabel.center = CGPoint(x: contentView.bounds.width / 2,
+                                    y: contentView.bounds.height / 1.5)
+        
+        messageLabel.text = messageText
+        messageLabel.textColor = .gray
+        messageLabel.textAlignment = .center
+        
+        contentView.addSubview(messageLabel)
+        
+        
+        alertImage.frame = CGRect(x: 0,
+                                y: 0,
+                                width: 100,
+                                height: 100)
+        
+        alertImage.center = CGPoint(x: contentView.bounds.width / 2,
+                                      y: contentView.bounds.height / 4.0)
+        
+        let image = UIImage(named: "insert_comment.png")!
+        alertImage.image = image
+        
+        contentView.addSubview(alertImage)
+        
         alertView.frame = AppSize.window
-        alertView.backgroundColor = .white
-        alertView.alpha = 0.2
-        
-        app.window?.addSubview(alertView)
-        //
-        //
-        //        singleViewAcceptButton.setTitle(title, for: .normal)
-        //        singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-        
-        
-        
-        
+        alertView.backgroundColor = .gray
+        alertView.alpha = 0.7
+
+        self.view.addSubview(alertView)
+        self.view.addSubview(contentView)
         
     }
     
     
     func addDoubleButton(_ cancelTitle: String, _ acceptTitle: String) {
         
+        contentView.frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: AppSize.screenWidth / 1.2,
+                                   height: AppSize.screenHeight / 2)
+        
+        contentView.center = CGPoint(x: AppSize.screenWidth / 2,
+                                     y: AppSize.screenHeight / 2)
+        
+        contentView.backgroundColor = .white
+        
+        
+        
         doubleButtonView.frame = CGRect(x: 0,
                                         y: 0,
-                                        width: doubleButtonView.frame.width,
-                                        height: doubleButtonView.frame.height)
+                                        width: contentView.bounds.width,
+                                        height: 50)
         
         doubleButtonView.center = CGPoint(x: contentView.bounds.width / 2,
-                                          y: contentView.bounds.maxY - doubleButtonView.bounds.height / 2)
+                                          y: contentView.bounds.maxY - 30)
         
         
+
+        doubleViewAcceptButton.frame = CGRect(x: 0,
+                                              y: 0,
+                                              width: doubleButtonView.bounds.width / 2 - 15,
+                                              height: 50)
+        
+        doubleViewAcceptButton.center = CGPoint(x: doubleButtonView.bounds.midX + (doubleButtonView.bounds.width / 4) - 2,
+                                                y: doubleButtonView.bounds.midY)
+        
+        doubleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+        doubleViewAcceptButton.setTitleColor(.black, for: .normal)
+        doubleViewAcceptButton.setTitle(title, for: .normal)
+        doubleViewAcceptButton.setTitle(acceptTitle, for: .normal)
+        
+        doubleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+
+        doubleViewAcceptButton.layer.masksToBounds = true
+        doubleViewAcceptButton.layer.cornerRadius = 5.0
+        
+        
+        
+        
+        
+        doubleViewCancelButton.frame = CGRect(x: 0,
+                                              y: 0,
+                                              width: doubleButtonView.bounds.width / 2 - 15,
+                                              height: 50)
+        
+        doubleViewCancelButton.center = CGPoint(x:  doubleButtonView.bounds.midX - (doubleButtonView.bounds.width / 4) + 2,
+                                             y: doubleButtonView.bounds.midY)
+        
+        doubleViewCancelButton.backgroundColor = .black
+        doubleViewCancelButton.setTitleColor(.white, for: .normal)
+        doubleViewCancelButton.setTitle(title, for: .normal)
         
         doubleViewCancelButton.setTitle(cancelTitle, for: .normal)
-        doubleViewAcceptButton.setTitle(acceptTitle, for: .normal)
+
+        doubleViewCancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        
+        doubleViewCancelButton.layer.masksToBounds = true
+        doubleViewCancelButton.layer.cornerRadius = 5.0
+        
+
+        
+        
+        
+        doubleButtonView.addSubview(doubleViewAcceptButton)
+        doubleButtonView.addSubview(doubleViewCancelButton)
+        contentView.addSubview(doubleButtonView)
+        
+        
+        titleLabel.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: AppSize.screenWidth,
+                                  height: AppSize.screenHeight / 2)
+        
+        titleLabel.center = CGPoint(x: contentView.bounds.width / 2,
+                                    y: contentView.bounds.height / 2)
+        
+        titleLabel.text = titleText
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        
+        contentView.addSubview(titleLabel)
+        
+        
+        messageLabel.frame = CGRect(x: 0,
+                                    y: 0,
+                                    width: AppSize.screenWidth,
+                                    height: AppSize.screenHeight / 2)
+        
+        messageLabel.center = CGPoint(x: contentView.bounds.width / 2,
+                                      y: contentView.bounds.height / 1.5)
+        
+        messageLabel.text = messageText
+        messageLabel.textColor = .gray
+        messageLabel.textAlignment = .center
+        
+        contentView.addSubview(messageLabel)
+        
+        
+        
         
         
         
@@ -163,10 +293,27 @@ class Alert: UIViewController {
         //
         //		contentView.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
         
-        contentView.addSubview(doubleButtonView)
         
-        doubleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-        doubleViewCancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        alertImage.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: 100,
+                                  height: 100)
+        
+        alertImage.center = CGPoint(x: contentView.bounds.width / 2,
+                                    y: contentView.bounds.height / 4.0)
+        
+        let image = UIImage(named: "insert_comment.png")!
+        alertImage.image = image
+        
+        contentView.addSubview(alertImage)
+        
+        alertView.frame = AppSize.window
+        alertView.backgroundColor = .gray
+        alertView.alpha = 0.7
+        
+        self.view.addSubview(alertView)
+        self.view.addSubview(contentView)
+        
     }
     
     
@@ -207,18 +354,17 @@ extension Alert {
     
     class func show(_ vc: UIViewController, title: String, message: String, buttonTitle: String, handler: AlertAction?) {
         
-        //		guard let alert = UIStoryboard(name: "MyAlertController", bundle: nil).instantiateInitialViewController()
-        //			as? MyAlertController else { return }
-        
         let alert = Alert()
         
         alert.titleText = title
         alert.messageText = message
         alert.buttonType = .SingleButton(buttonTitle)
         alert.handler = handler
+        alert.view.backgroundColor = UIColor.clear
         alert.modalPresentationStyle = .overCurrentContext
+        alert.modalTransitionStyle = .flipHorizontal
 
-        vc.present(alert, animated: false, completion: nil)
+        vc.present(alert, animated: true, completion: nil)
     }
     
     class func show(_ vc: UIViewController, title: String, message: String, cancelTitle: String, acceptTitle: String, handler: AlertAction?) {
@@ -226,9 +372,12 @@ extension Alert {
         let alert = Alert()        
         alert.titleText = title
         alert.messageText = message
-        alert.buttonType = .DoubleButton(cancelTitle, cancelTitle)
+        alert.buttonType = .DoubleButton(cancelTitle, acceptTitle)
         alert.handler = handler
+        alert.view.backgroundColor = UIColor.clear
         alert.modalPresentationStyle = .overCurrentContext
+        alert.modalTransitionStyle = .flipHorizontal
+
         vc.present(alert, animated: true, completion: nil)
     }
 }

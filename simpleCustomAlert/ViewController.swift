@@ -17,13 +17,16 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert(_ sender: Any) {
         
-        DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
-            switch action {
-                case .Accept : print("accept!")
-                case .Cancel : print("cancel!")
-            }
-        }
+//        DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+//            switch action {
+//                case .Accept : print("accept!")
+//                case .Cancel : print("cancel!")
+//            }
+//        }
         
+        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
+            print("OK")
+        }
 
 
         

@@ -41,7 +41,7 @@
 		E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AA10BE1F3DD63D00EC1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA10C01F3DD63D00EC1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
+		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSize.swift; path = AppSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 		E36030ED1F3EA815003024B6 /* SingleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030EF1F3EA847003024B6 /* SingleAlert.swift */,
 				E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */,
+				E36030EF1F3EA847003024B6 /* SingleAlert.swift */,
 			);
 			path = SingleAlert;
 			sourceTree = "<group>";
@@ -67,10 +67,19 @@
 		E36030EE1F3EA81D003024B6 /* DoubleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
 				E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */,
+				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
 			);
 			path = DoubleAlert;
+			sourceTree = "<group>";
+		};
+		E3825B621F45E68700FF9E63 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				E36030F11F3EA8BA003024B6 /* Alert.swift */,
+				E3825B601F45E25B00FF9E63 /* AlertView.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		E3AA10A81F3DD63C00EC1E8E = {
@@ -92,36 +101,36 @@
 		E3AA10B31F3DD63D00EC1E8E /* simpleCustomAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E3AA10D71F3DD81A00EC1E8E /* Alert */,
+				E3825B621F45E68700FF9E63 /* Alert */,
 				E3AA10D81F3DD83400EC1E8E /* images */,
+				E3AA10D71F3DD81A00EC1E8E /* simpleCustomAlert */,
 				E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */,
-				E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */,
-				E3AA10B81F3DD63D00EC1E8E /* Main.storyboard */,
-				E3AA10BD1F3DD63D00EC1E8E /* LaunchScreen.storyboard */,
+				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
 				E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */,
 				E3AA10C01F3DD63D00EC1E8E /* Info.plist */,
+				E3AA10BD1F3DD63D00EC1E8E /* LaunchScreen.storyboard */,
+				E3AA10B81F3DD63D00EC1E8E /* Main.storyboard */,
+				E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */,
 			);
 			path = simpleCustomAlert;
 			sourceTree = "<group>";
 		};
-		E3AA10D71F3DD81A00EC1E8E /* Alert */ = {
+		E3AA10D71F3DD81A00EC1E8E /* simpleCustomAlert */ = {
 			isa = PBXGroup;
 			children = (
 				E36030EE1F3EA81D003024B6 /* DoubleAlert */,
 				E36030ED1F3EA815003024B6 /* SingleAlert */,
 				E32CB1D21F4008630080D10D /* CustomAlert.swift */,
-				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
-				E36030F11F3EA8BA003024B6 /* Alert.swift */,
-				E3825B601F45E25B00FF9E63 /* AlertView.swift */,
 			);
-			path = Alert;
+			name = simpleCustomAlert;
+			path = simpleCustomAlert;
 			sourceTree = "<group>";
 		};
 		E3AA10D81F3DD83400EC1E8E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				E30F7F7C1F43386600D06FE5 /* insert_comment.png */,
 				E30F7F7A1F43372D00D06FE5 /* check.png */,
+				E30F7F7C1F43386600D06FE5 /* insert_comment.png */,
 			);
 			path = images;
 			sourceTree = "<group>";

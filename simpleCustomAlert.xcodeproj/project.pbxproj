@@ -15,6 +15,7 @@
 		E36030F21F3EA8BA003024B6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030F11F3EA8BA003024B6 /* Alert.swift */; };
 		E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36030F31F3EC021003024B6 /* DoubleAlert.swift */; };
 		E36030F81F3EC060003024B6 /* DoubleAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */; };
+		E3825B611F45E25B00FF9E63 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3825B601F45E25B00FF9E63 /* AlertView.swift */; };
 		E3AA10B51F3DD63D00EC1E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */; };
 		E3AA10B71F3DD63D00EC1E8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */; };
 		E3AA10BA1F3DD63D00EC1E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA10B81F3DD63D00EC1E8E /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		E36030F11F3EA8BA003024B6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E36030F31F3EC021003024B6 /* DoubleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleAlert.swift; sourceTree = "<group>"; };
 		E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DoubleAlert.storyboard; sourceTree = "<group>"; };
+		E3825B601F45E25B00FF9E63 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		E3AA10B11F3DD63D00EC1E8E /* simpleCustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +110,9 @@
 				E36030EE1F3EA81D003024B6 /* DoubleAlert */,
 				E36030ED1F3EA815003024B6 /* SingleAlert */,
 				E32CB1D21F4008630080D10D /* CustomAlert.swift */,
-				E36030F11F3EA8BA003024B6 /* Alert.swift */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
+				E36030F11F3EA8BA003024B6 /* Alert.swift */,
+				E3825B601F45E25B00FF9E63 /* AlertView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */,
 				E3AA10DA1F3DDB8100EC1E8E /* AppSize.swift in Sources */,
 				E36030F01F3EA847003024B6 /* SingleAlert.swift in Sources */,
+				E3825B611F45E25B00FF9E63 /* AlertView.swift in Sources */,
 				E3AA10B51F3DD63D00EC1E8E /* AppDelegate.swift in Sources */,
 				E32CB1D31F4008630080D10D /* CustomAlert.swift in Sources */,
 			);

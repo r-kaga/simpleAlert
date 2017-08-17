@@ -46,9 +46,8 @@ class DoubleAlert: CustomAlert {
 
   
     private func addDoubleButton(cancelTitle: String, acceptTitle: String) {
-        
-//        doubleViewCancelButton.setTitle(cancelTitle, for: .normal)
-//        doubleViewAcceptButton.setTitle(acceptTitle, for: .normal)
+        doubleViewCancelButton.setTitle(cancelTitle, for: .normal)
+        doubleViewAcceptButton.setTitle(acceptTitle, for: .normal)
     }
     
     

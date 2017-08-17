@@ -26,6 +26,12 @@ class SingleAlert: CustomAlert {
         titleLabel.text = titleText
         messageLabel.text = messageText
         
+        switch buttonType {
+        case let .SingleButton(title) :
+            addSingleButton(title: title)
+            
+        }
+        
         addSingleButton(title: title ?? "OK")
 
         super.animationContentView(hidden: true)
@@ -38,9 +44,7 @@ class SingleAlert: CustomAlert {
 
     
     private func addSingleButton(title: String) {
-//        singleViewAcceptButton.frame.origin = CGPoint(x: 0, y: 120)
-//        contentView.addSubview(singleButtonView)
-//        singleViewAcceptButton.setTitle(title, for: .normal)
+        singleViewAcceptButton.setTitle(title, for: .normal)
     }
     
     

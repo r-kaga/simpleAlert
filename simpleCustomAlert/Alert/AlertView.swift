@@ -16,7 +16,22 @@ class AlertView: Alert {
     var accept: String
     var cancel: String
     
-    var contentViewRect: CGRect
+
+    init(title: String, message: String, accept: String = "OK", cancel: String = "Cancel") {
+        self.titleText = title
+        self.messageText = message
+        self.accept = accept
+        self.cancel = cancel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    static let contentViewRect: CGRect = CGRect(x: AppSize.screenWidth / 2, y: AppSize.screenHeight / 2,
+                                                width: AppSize.screenWidth / 1.2, height: AppSize.screenHeight / 2)
     
     let content: UIView = {
         let contentView = UIView()
@@ -32,93 +47,91 @@ class AlertView: Alert {
         return contentView
     }()
     
-    init(title: String, message: String, accept: String = "OK", cancel: String = "Cancel") {
-        self.titleText = title
-        self.messageText = message
-        self.accept = accept
-        self.cancel = cancel
+    let titleView: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: AppSize.screenWidth,
+                                  height: AppSize.screenHeight / 2)
         
-        self.contentView = self.content.bounds
-        super.init(nibName: nil, bundle: nil)
-    }
+        titleLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
+                                    y: AlertView.contentViewRect.height / 2)
+        
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
+        return titleLabel
+    }()
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    let messageView: UILabel = {
+        let messageLabel = UILabel()
+        messageLabel.frame = CGRect(x: 0,
+                                    y: 0,
+                                    width: AppSize.screenWidth,
+                                    height: AppSize.screenHeight / 2)
+        
+        messageLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
+                                      y: AlertView.contentViewRect.height / 1.5)
+        
+        messageLabel.textColor = .gray
+        messageLabel.textAlignment = .center
+        return messageLabel
+    }()
 
+    let singleButton: UIButton = {
+        let singleViewAcceptButton = UIButton()
+        singleViewAcceptButton.frame = CGRect(x: 0,
+                                              y: 0,
+                                              width: AlertView.contentViewRect.width / 1.2 ,
+                                              height: 50)
+        
+        singleViewAcceptButton.center = CGPoint(x: AlertView.contentViewRect.width / 2,
+                                                y: AlertView.contentViewRect.height - singleViewAcceptButton.frame.height / 1.5)
+        
+        singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+        
+        singleViewAcceptButton.setTitleColor(.black, for: .normal)
+        singleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+        
+        singleViewAcceptButton.layer.masksToBounds = true
+        singleViewAcceptButton.layer.cornerRadius = 20.0
+        return singleViewAcceptButton
+    }()
     
-
+    let alertImageView: UIImageView = {
+        let alertImage = UIImageView()
+        alertImage.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: 100,
+                                  height: 100)
+        
+        alertImage.center = CGPoint(x: AlertView.contentViewRect.width / 2,
+                                    y: AlertView.contentViewRect.height / 4.0)
+        return alertImage
+    }()
+    
     // SingleAlert ContentView
     func setUpSingleAlert() -> UIView {
        let content: UIView = {
         
             let contentView = self.content
         
-            let titleLabel = UILabel()
-            titleLabel.frame = CGRect(x: 0,
-                                      y: 0,
-                                      width: AppSize.screenWidth,
-                                      height: AppSize.screenHeight / 2)
-            
-            titleLabel.center = CGPoint(x: self.contentView.width / 2,
-                                        y: self.contentView.height / 2)
-            
+            let titleLabel = self.titleView
             titleLabel.text = self.titleText
-            titleLabel.textColor = .black
-            titleLabel.textAlignment = .center
-        
-        
             contentView.addSubview(titleLabel)
-            
-            let messageLabel = UILabel()
-            messageLabel.frame = CGRect(x: 0,
-                                        y: 0,
-                                        width: AppSize.screenWidth,
-                                        height: AppSize.screenHeight / 2)
-            
-            messageLabel.center = CGPoint(x: contentView.bounds.width / 2,
-                                          y: contentView.bounds.height / 1.5)
-            
+        
+            let messageLabel = self.messageView
             messageLabel.text = self.messageText
-            messageLabel.textColor = .gray
-            messageLabel.textAlignment = .center
-            
             contentView.addSubview(messageLabel)
-            
-            let singleViewAcceptButton = UIButton()
-            singleViewAcceptButton.frame = CGRect(x: 0,
-                                                  y: 0,
-                                                  width: contentView.bounds.width / 1.2 ,
-                                                  height: 50)
-            
-            singleViewAcceptButton.center = CGPoint(x: contentView.bounds.width / 2,
-                                                    y: contentView.bounds.maxY - singleViewAcceptButton.frame.height / 1.5)
-            
-            singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
-            
-            singleViewAcceptButton.setTitleColor(.black, for: .normal)
+        
+
+            let singleViewAcceptButton = self.singleButton
             singleViewAcceptButton.setTitle(self.accept, for: .normal)
-            singleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-            singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-            
-            singleViewAcceptButton.layer.masksToBounds = true
-            singleViewAcceptButton.layer.cornerRadius = 20.0
-            
             contentView.addSubview(singleViewAcceptButton)
-            
-            let alertImage = UIImageView()
-            alertImage.frame = CGRect(x: 0,
-                                      y: 0,
-                                      width: 100,
-                                      height: 100)
-            
-            alertImage.center = CGPoint(x: contentView.bounds.width / 2,
-                                        y: contentView.bounds.height / 4.0)
-            
+        
+            let alertImage = self.alertImageView
             let image = UIImage(named: "insert_comment.png")!
             alertImage.image = image
-            
             contentView.addSubview(alertImage)
             
             return contentView

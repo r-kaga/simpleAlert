@@ -11,33 +11,64 @@ import UIKit
 
 class AlertView: Alert {
     
+    var titleText: String
+    var messageText: String
+    var accept: String
+    var cancel: String
+    
+    var contentViewRect: CGRect
+    
+    let content: UIView = {
+        let contentView = UIView()
+        contentView.frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: AppSize.screenWidth / 1.2,
+                                   height: AppSize.screenHeight / 2)
+        
+        contentView.center = CGPoint(x: AppSize.screenWidth / 2,
+                                     y: AppSize.screenHeight / 2)
+        
+        contentView.backgroundColor = .white
+        return contentView
+    }()
+    
+    init(title: String, message: String, accept: String = "OK", cancel: String = "Cancel") {
+        self.titleText = title
+        self.messageText = message
+        self.accept = accept
+        self.cancel = cancel
+        
+        self.contentView = self.content.bounds
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
+    
+
     // SingleAlert ContentView
-    func setUpSingleAlert(title: String, message: String, buttonTitle: String) -> UIView {
-        let content: UIView = {
-            let contentView = UIView()
-            contentView.frame = CGRect(x: 0,
-                                       y: 0,
-                                       width: AppSize.screenWidth / 1.2,
-                                       height: AppSize.screenHeight / 2)
-            
-            contentView.center = CGPoint(x: AppSize.screenWidth / 2,
-                                         y: AppSize.screenHeight / 2)
-            
-            contentView.backgroundColor = .white
-            
+    func setUpSingleAlert() -> UIView {
+       let content: UIView = {
+        
+            let contentView = self.content
+        
             let titleLabel = UILabel()
             titleLabel.frame = CGRect(x: 0,
                                       y: 0,
                                       width: AppSize.screenWidth,
                                       height: AppSize.screenHeight / 2)
             
-            titleLabel.center = CGPoint(x: contentView.bounds.width / 2,
-                                        y: contentView.bounds.height / 2)
+            titleLabel.center = CGPoint(x: self.contentView.width / 2,
+                                        y: self.contentView.height / 2)
             
-            titleLabel.text = title
+            titleLabel.text = self.titleText
             titleLabel.textColor = .black
             titleLabel.textAlignment = .center
-            
+        
+        
             contentView.addSubview(titleLabel)
             
             let messageLabel = UILabel()
@@ -49,7 +80,7 @@ class AlertView: Alert {
             messageLabel.center = CGPoint(x: contentView.bounds.width / 2,
                                           y: contentView.bounds.height / 1.5)
             
-            messageLabel.text = message
+            messageLabel.text = self.messageText
             messageLabel.textColor = .gray
             messageLabel.textAlignment = .center
             
@@ -67,7 +98,7 @@ class AlertView: Alert {
             singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
             
             singleViewAcceptButton.setTitleColor(.black, for: .normal)
-            singleViewAcceptButton.setTitle(buttonTitle, for: .normal)
+            singleViewAcceptButton.setTitle(self.accept, for: .normal)
             singleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
             singleViewAcceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
             
@@ -97,7 +128,7 @@ class AlertView: Alert {
     
     
     // DoubleAlert ContentView
-    func setUpDoubleAlert(title: String, message: String, accept: String, cancel: String) -> UIView {
+    func setUpDoubleAlert() -> UIView {
         
         let content: UIView = {
             
@@ -133,9 +164,7 @@ class AlertView: Alert {
             
             doubleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
             doubleViewAcceptButton.setTitleColor(.black, for: .normal)
-            doubleViewAcceptButton.setTitle(title, for: .normal)
-            doubleViewAcceptButton.setTitle(accept, for: .normal)
-            
+            doubleViewAcceptButton.setTitle(self.accept, for: .normal)
             doubleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
             
             doubleViewAcceptButton.layer.masksToBounds = true
@@ -155,9 +184,8 @@ class AlertView: Alert {
             
             doubleViewCancelButton.backgroundColor = .black
             doubleViewCancelButton.setTitleColor(.white, for: .normal)
-            doubleViewCancelButton.setTitle(title, for: .normal)
+            doubleViewCancelButton.setTitle(self.cancel, for: .normal)
             
-            doubleViewCancelButton.setTitle(cancel, for: .normal)
             
             doubleViewCancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
             
@@ -181,7 +209,7 @@ class AlertView: Alert {
             titleLabel.center = CGPoint(x: contentView.bounds.width / 2,
                                         y: contentView.bounds.height / 2)
             
-            titleLabel.text = title
+            titleLabel.text = self.title
             titleLabel.textColor = .black
             titleLabel.textAlignment = .center
             
@@ -196,7 +224,7 @@ class AlertView: Alert {
             messageLabel.center = CGPoint(x: contentView.bounds.width / 2,
                                           y: contentView.bounds.height / 1.5)
             
-            messageLabel.text = message
+            messageLabel.text = self.messageText
             messageLabel.textColor = .gray
             messageLabel.textAlignment = .center
             

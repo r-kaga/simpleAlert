@@ -41,7 +41,7 @@
 		E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AA10BE1F3DD63D00EC1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA10C01F3DD63D00EC1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSize.swift; path = AppSize.swift; sourceTree = "<group>"; };
+		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				E3825B621F45E68700FF9E63 /* Alert */,
-				E3AA10D81F3DD83400EC1E8E /* images */,
 				E3AA10D71F3DD81A00EC1E8E /* simpleCustomAlert */,
+				E3AA10D81F3DD83400EC1E8E /* images */,
 				E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
 				E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */,
@@ -122,7 +122,6 @@
 				E36030ED1F3EA815003024B6 /* SingleAlert */,
 				E32CB1D21F4008630080D10D /* CustomAlert.swift */,
 			);
-			name = simpleCustomAlert;
 			path = simpleCustomAlert;
 			sourceTree = "<group>";
 		};

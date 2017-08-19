@@ -106,11 +106,11 @@
 				E3AA10D81F3DD83400EC1E8E /* images */,
 				E3AA10B41F3DD63D00EC1E8E /* AppDelegate.swift */,
 				E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */,
+				E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */,
 				E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */,
 				E3AA10C01F3DD63D00EC1E8E /* Info.plist */,
 				E3AA10BD1F3DD63D00EC1E8E /* LaunchScreen.storyboard */,
 				E3AA10B81F3DD63D00EC1E8E /* Main.storyboard */,
-				E3AA10B61F3DD63D00EC1E8E /* ViewController.swift */,
 			);
 			path = simpleCustomAlert;
 			sourceTree = "<group>";

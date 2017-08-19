@@ -28,13 +28,13 @@ class ViewController: UIViewController {
 //            print(action)
 //        }
         
-        Alert.show(self, title: "Good Job!", message: "You Click The Button", buttonTitle: "OK") { action in
-            print("OK")
-        }
-
-//        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
+//        Alert.show(self, title: "Good Job!", message: "You Click The Button", buttonTitle: "OK") { action in
 //            print("OK")
 //        }
+
+        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
+            print("OK")
+        }
 
 
         

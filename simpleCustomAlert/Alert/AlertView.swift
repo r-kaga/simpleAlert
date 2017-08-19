@@ -55,7 +55,7 @@ class AlertView: Alert {
                                   height: AppSize.screenHeight / 2)
         
         titleLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                    y: AlertView.contentViewRect.height / 2.8)
+                                    y: AlertView.contentViewRect.height / 3.0)
         
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center
@@ -72,7 +72,7 @@ class AlertView: Alert {
         messageLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
                                       y: AlertView.contentViewRect.height / 1.8)
         
-        messageLabel.textColor = .gray
+        messageLabel.textColor = .white
         messageLabel.textAlignment = .center
         return messageLabel
     }()
@@ -162,8 +162,7 @@ class AlertView: Alert {
     
     let circleImageView: UIView = {
         let circleView = UIView(frame: CGRect(x: 0, y: 0, width: 130, height: 130))
-//        circileView.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
-        circleView.backgroundColor = .white
+        circleView.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
         circleView.center = CGPoint(x: AlertView.contentViewRect.width / 2,
                                      y: AlertView.contentViewRect.minY - AlertView.contentViewRect.height)
         circleView.layer.masksToBounds = true
@@ -177,8 +176,8 @@ class AlertView: Alert {
         let alertImage = UIImageView()
         alertImage.frame = CGRect(x: 0,
                                   y: 0,
-                                  width: 100,
-                                  height: 100)
+                                  width: 80,
+                                  height: 80)
         
         alertImage.center = CGPoint(x: AlertView.contentViewRect.width / 2,
                                     y: AlertView.contentViewRect.minY - AlertView.contentViewRect.height)

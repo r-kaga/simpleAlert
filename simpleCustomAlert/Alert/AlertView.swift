@@ -191,8 +191,7 @@ class AlertView: Alert {
             contentView.addSubview(singleViewAcceptButton)
         
             let alertImage = self.alertImageView
-            let image = UIImage(named: "insert_comment.png")!
-            alertImage.image = image
+            alertImage.image = self.getAlertImage()
             contentView.addSubview(alertImage)
             
             return contentView
@@ -226,15 +225,17 @@ class AlertView: Alert {
             contentView.addSubview(messageLabel)
             
             let alertImage = self.alertImageView
-            let image = UIImage(named: "insert_comment.png")!
-            alertImage.image = image
+            alertImage.image = self.getAlertImage()
             contentView.addSubview(alertImage)
             
             return contentView
         }()
         return content
     }
- 
+    
+    func getAlertImage() -> UIImage {
+        return UIImage(named: "insert_comment.png")!
+    }
     
     
     

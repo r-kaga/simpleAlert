@@ -58,8 +58,8 @@
 		E36030ED1F3EA815003024B6 /* SingleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */,
 				E36030EF1F3EA847003024B6 /* SingleAlert.swift */,
+				E36030E51F3E0B18003024B6 /* SingleAlert.storyboard */,
 			);
 			path = SingleAlert;
 			sourceTree = "<group>";
@@ -67,8 +67,8 @@
 		E36030EE1F3EA81D003024B6 /* DoubleAlert */ = {
 			isa = PBXGroup;
 			children = (
-				E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */,
 				E36030F31F3EC021003024B6 /* DoubleAlert.swift */,
+				E36030F71F3EC060003024B6 /* DoubleAlert.storyboard */,
 			);
 			path = DoubleAlert;
 			sourceTree = "<group>";

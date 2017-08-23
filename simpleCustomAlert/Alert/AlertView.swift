@@ -87,7 +87,8 @@ class AlertView: Alert {
         singleViewAcceptButton.center = CGPoint(x: AlertView.contentViewRect.width / 2,
                                                 y: AlertView.contentViewRect.height - singleViewAcceptButton.frame.height / 1.5)
         
-        singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+//        singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+        singleViewAcceptButton.backgroundColor = UIColor.white
         
         singleViewAcceptButton.setTitleColor(.black, for: .normal)
         singleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -202,10 +203,14 @@ class AlertView: Alert {
             singleViewAcceptButton.setTitle(self.accept, for: .normal)
             contentView.addSubview(singleViewAcceptButton)
         
+            let circle = self.circleImageView
+            
             let alertImage = self.alertImageView
             alertImage.image = self.getAlertImage()
-            contentView.addSubview(alertImage)
             
+            contentView.addSubview(circle)
+            contentView.addSubview(alertImage)
+        
             return contentView
         }()
         return content

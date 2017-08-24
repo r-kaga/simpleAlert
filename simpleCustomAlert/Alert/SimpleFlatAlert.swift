@@ -33,7 +33,7 @@ struct SimpleFlatAlert {
         contentView.center = CGPoint(x: AppSize.screenWidth / 2,
                                      y: AppSize.screenHeight / 2)
         
-        contentView.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
+        contentView.backgroundColor = .white
         return contentView
     }()
 
@@ -45,7 +45,7 @@ struct SimpleFlatAlert {
                                              width: 80,
                                              height: 80
                                 ))
-        view.center = CGPoint(x: AppSize.contentViewRect.width / 2, y: AppSize.contentViewRect.minY + 100)
+        view.center = CGPoint(x: AppSize.contentViewRect.width / 2, y: AppSize.contentViewRect.minY - AppSize.contentViewRect.height / 1.3)
         
         return view
     }()

@@ -258,6 +258,10 @@ class AlertView: Alert {
     func getAlertImage() -> UIImage {
         return UIImage(named: "insert_comment.png")!
     }
+
+    
+    
+    
     
     
     

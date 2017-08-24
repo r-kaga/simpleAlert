@@ -22,6 +22,7 @@
 		E3AA10BC1F3DD63D00EC1E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3AA10BB1F3DD63D00EC1E8E /* Assets.xcassets */; };
 		E3AA10BF1F3DD63D00EC1E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA10BD1F3DD63D00EC1E8E /* LaunchScreen.storyboard */; };
 		E3AA10DA1F3DDB8100EC1E8E /* AppSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */; };
+		E3F7CF891F4F1F9D00C3BD83 /* SimpleFlatAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7CF881F4F1F9D00C3BD83 /* SimpleFlatAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E3AA10BE1F3DD63D00EC1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA10C01F3DD63D00EC1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3AA10D91F3DDB8100EC1E8E /* AppSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSize.swift; sourceTree = "<group>"; };
+		E3F7CF881F4F1F9D00C3BD83 /* SimpleFlatAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleFlatAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				E36030F11F3EA8BA003024B6 /* Alert.swift */,
 				E3825B601F45E25B00FF9E63 /* AlertView.swift */,
+				E3F7CF881F4F1F9D00C3BD83 /* SimpleFlatAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F7CF891F4F1F9D00C3BD83 /* SimpleFlatAlert.swift in Sources */,
 				E36030F21F3EA8BA003024B6 /* Alert.swift in Sources */,
 				E3AA10B71F3DD63D00EC1E8E /* ViewController.swift in Sources */,
 				E36030F41F3EC021003024B6 /* DoubleAlert.swift in Sources */,

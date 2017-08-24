@@ -63,15 +63,15 @@ class Alert: UIViewController {
     
     func addSingleButton(title: String) {
 
-        let contentView = AlertView(title: "Title", message: "Messsage").setUpSingleAlert()
+//        let contentView = AlertView(title: "Title", message: "Messsage").setUpSingleAlert()
+        let contentView = SimpleFlatAlert(title: "Title", message: "Messsage").setUpSingleAlert()
         
         let view = self.alertView
 
         self.view.addSubview(view)
         self.view.addSubview(contentView)
     }
-    
-    
+
     func addDoubleButton(_ cancelTitle: String, _ acceptTitle: String) {
         
         let contentView = AlertView(title: "Title", message: "Messsage").setUpDoubleAlert()

@@ -25,6 +25,8 @@ class Alert: UIViewController {
     typealias AlertAction = (_ action: AlertActions ) -> ()
     var handler: AlertAction?
     
+    static let contentViewRect: CGRect = CGRect(x: AppSize.screenWidth / 2, y: AppSize.screenHeight / 2,
+                                                width: AppSize.screenWidth / 1.2, height: AppSize.screenHeight / 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +51,7 @@ class Alert: UIViewController {
     
     func animationContentView(hidden: Bool, completed: (()->())? = nil) {
         let alpha: CGFloat
-        if hidden { alpha = 0 }
-        else { alpha = 1 }
+        alpha = hidden ? 0 : 1
         
         UIView.animate(withDuration: 0.2, animations: {
             self.view.alpha = alpha

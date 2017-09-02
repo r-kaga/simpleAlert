@@ -62,7 +62,7 @@ class SimpleFlatAlert: Alert {
                                   width: AppSize.screenWidth,
                                   height: AppSize.screenHeight / 3)
         
-        titleLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
+        titleLabel.center = CGPoint(x: Alert.contentViewRect.width / 2,
                                    y: AppSize.contentViewRect.height - AppSize.contentViewRect.height / 1.6)
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center

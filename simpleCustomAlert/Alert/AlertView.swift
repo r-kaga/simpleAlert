@@ -29,11 +29,7 @@ class AlertView: Alert {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    static let contentViewRect: CGRect = CGRect(x: AppSize.screenWidth / 2, y: AppSize.screenHeight / 2,
-                                                width: AppSize.screenWidth / 1.2, height: AppSize.screenHeight / 2)
-    
-    let content: UIView = {
+    private let content: UIView = {
         let contentView = UIView()
         contentView.frame = CGRect(x: 0,
                                    y: 0,
@@ -47,45 +43,45 @@ class AlertView: Alert {
         return contentView
     }()
     
-    let titleView: UILabel = {
+    private let titleView: UILabel = {
         let titleLabel = UILabel()
         titleLabel.frame = CGRect(x: 0,
                                   y: 0,
                                   width: AppSize.screenWidth,
                                   height: AppSize.screenHeight / 2)
         
-        titleLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                    y: AlertView.contentViewRect.height / 3.0)
+        titleLabel.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                    y: Alert.contentViewRect.height / 3.0)
         
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         return titleLabel
     }()
     
-    let messageView: UILabel = {
+    private let messageView: UILabel = {
         let messageLabel = UILabel()
         messageLabel.frame = CGRect(x: 0,
                                     y: 0,
                                     width: AppSize.screenWidth,
                                     height: AppSize.screenHeight / 2)
         
-        messageLabel.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                      y: AlertView.contentViewRect.height / 1.8)
+        messageLabel.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                      y: Alert.contentViewRect.height / 1.8)
         
         messageLabel.textColor = .white
         messageLabel.textAlignment = .center
         return messageLabel
     }()
 
-    let singleButton: UIButton = {
+    private let singleButton: UIButton = {
         let singleViewAcceptButton = UIButton()
         singleViewAcceptButton.frame = CGRect(x: 0,
                                               y: 0,
-                                              width: AlertView.contentViewRect.width / 1.2 ,
+                                              width: Alert.contentViewRect.width / 1.2 ,
                                               height: 50)
         
-        singleViewAcceptButton.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                                y: AlertView.contentViewRect.height - singleViewAcceptButton.frame.height / 1.5)
+        singleViewAcceptButton.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                                y: Alert.contentViewRect.height - singleViewAcceptButton.frame.height / 1.5)
         
 //        singleViewAcceptButton.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
         singleViewAcceptButton.backgroundColor = UIColor.white
@@ -100,29 +96,29 @@ class AlertView: Alert {
     }()
     
     
-    let doubleButtonVIew: UIView = {
+    private let doubleButtonVIew: UIView = {
         let doubleButtonView = UIView()
         doubleButtonView.frame = CGRect(x: 0,
                                         y: 0,
-                                        width: AlertView.contentViewRect.width,
+                                        width: Alert.contentViewRect.width,
                                         height: 50)
         
-        doubleButtonView.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                          y: AlertView.contentViewRect.height - 30)
+        doubleButtonView.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                          y: Alert.contentViewRect.height - 30)
         return doubleButtonView
     }()
     
     
-    let doubleAcceptButton: UIButton = {
+    private let doubleAcceptButton: UIButton = {
        
         let doubleViewAcceptButton = UIButton()
         doubleViewAcceptButton.frame = CGRect(x: 0,
                                               y: 0,
-                                              width: AlertView.contentViewRect.width / 2 - 15,
+                                              width: Alert.contentViewRect.width / 2 - 15,
                                               height: 50)
         
-        doubleViewAcceptButton.center = CGPoint(x: AlertView.contentViewRect.width / 2 + (AlertView.contentViewRect.width / 4) - 2,
-                                                y: AlertView.contentViewRect.origin.y - doubleViewAcceptButton.bounds.height / 1.5)
+        doubleViewAcceptButton.center = CGPoint(x: Alert.contentViewRect.width / 2 + (Alert.contentViewRect.width / 4) - 2,
+                                                y: Alert.contentViewRect.origin.y - doubleViewAcceptButton.bounds.height / 1.5)
         doubleViewAcceptButton.backgroundColor = .white
         doubleViewAcceptButton.setTitleColor(.black, for: .normal)
         doubleViewAcceptButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -134,16 +130,16 @@ class AlertView: Alert {
         return doubleViewAcceptButton
     }()
     
-    let doubleCancelButton: UIButton = {
+    private let doubleCancelButton: UIButton = {
         
         let doubleViewCancelButton = UIButton()
         doubleViewCancelButton.frame = CGRect(x: 0,
                                               y: 0,
-                                              width: AlertView.contentViewRect.width / 2 - 15,
+                                              width: Alert.contentViewRect.width / 2 - 15,
                                               height: 50)
         
-        doubleViewCancelButton.center = CGPoint(x:  AlertView.contentViewRect.width / 2 - (AlertView.contentViewRect.width / 4) + 2,
-                                                y: AlertView.contentViewRect.origin.y - doubleViewCancelButton.bounds.height / 1.5)
+        doubleViewCancelButton.center = CGPoint(x:  Alert.contentViewRect.width / 2 - (Alert.contentViewRect.width / 4) + 2,
+                                                y: Alert.contentViewRect.origin.y - doubleViewCancelButton.bounds.height / 1.5)
         
         doubleViewCancelButton.backgroundColor = .black
         doubleViewCancelButton.setTitleColor(.white, for: .normal)
@@ -161,18 +157,18 @@ class AlertView: Alert {
     }()
     
     
-    let circleImageView: UIView = {
+    private let circleImageView: UIView = {
         let circleView = UIView(frame: CGRect(x: 0, y: 0, width: 130, height: 130))
         circleView.backgroundColor = UIColor.hexStr(hexStr: "#72acff", alpha: 1)
-        circleView.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                     y: AlertView.contentViewRect.minY - AlertView.contentViewRect.height)
+        circleView.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                     y: Alert.contentViewRect.minY - Alert.contentViewRect.height)
         circleView.layer.masksToBounds = true
         circleView.layer.cornerRadius = circleView.bounds.width / 2
        
         return circleView
     }()
     
-    let alertImageView: UIImageView = {
+    private let alertImageView: UIImageView = {
         
         let alertImage = UIImageView()
         alertImage.frame = CGRect(x: 0,
@@ -180,8 +176,8 @@ class AlertView: Alert {
                                   width: 80,
                                   height: 80)
         
-        alertImage.center = CGPoint(x: AlertView.contentViewRect.width / 2,
-                                    y: AlertView.contentViewRect.minY - AlertView.contentViewRect.height)
+        alertImage.center = CGPoint(x: Alert.contentViewRect.width / 2,
+                                    y: Alert.contentViewRect.minY - Alert.contentViewRect.height)
         return alertImage
     }()
     
@@ -255,14 +251,30 @@ class AlertView: Alert {
         return content
     }
     
+
+
+}
+
+
+
+
+private extension AlertView {
+
+    
     func getAlertImage() -> UIImage {
         return UIImage(named: "insert_comment.png")!
     }
 
-    
-    
-    
-    
-    
-    
+
 }
+
+
+
+
+
+
+
+
+
+
+

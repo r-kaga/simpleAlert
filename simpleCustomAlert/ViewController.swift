@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func SingleAlertFromCode(_ sender: UIButton) {
-        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
+        Alert.show(self, title: "Good Job!", message: "You Click The Button", buttonTitle: "OK") { action in
             print("OK")
         }
     }
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func DoubleAlertFromCode(_ sender: UIButton) {
-        Alert.show(self, title: "Good Job!", message: "You Click The Button", buttonTitle: "OK") { action in
+        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
             print("OK")
         }
     }

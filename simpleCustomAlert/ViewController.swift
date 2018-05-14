@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  simpleCustomAlert
-//
-//  Created by 加賀谷諒 on 2017/08/11.
-//  Copyright © 2017年 ryo kagaya. All rights reserved.
-//
 
 import UIKit
 
@@ -14,33 +7,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+
+    @IBAction func SingleAlertFromCode(_ sender: UIButton) {
+        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
+            print("OK")
+        }
+    }
     
-    @IBAction func showAlert(_ sender: Any) {
-        
-//        DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
-//            switch action {
-//                case .Accept : print("accept!")
-//                case .Cancel : print("cancel!")
-//            }
-//        }
-        
-//        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
-//            print(action)
-//        }
-        
+    @IBAction func SingleAlertFromStoryboard(_ sender: UIButton) {
+        SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+            print(action)
+        }
+    }
+    
+    @IBAction func DoubleAlertFromCode(_ sender: UIButton) {
         Alert.show(self, title: "Good Job!", message: "You Click The Button", buttonTitle: "OK") { action in
             print("OK")
         }
-
-//        Alert.show(self, title: "Good Job!", message: "You Click The Button", cancelTitle: "Cancel", acceptTitle: "OK") { action in
-//            print("OK")
-//        }
-
-
-        
     }
-
-
+    
+    @IBAction func DoubleAlertFromStoryboard(_ sender: UIButton) {
+        DoubleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
+            switch action {
+                case .Accept : print("accept!")
+                case .Cancel : print("cancel!")
+            }
+        }
+    }
 
 }
 

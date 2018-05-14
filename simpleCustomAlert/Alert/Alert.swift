@@ -63,9 +63,8 @@ class Alert: UIViewController {
     
     
     func addSingleButton(title: String) {
-
-//        let contentView = AlertView(title: "Title", message: "Messsage").setUpSingleAlert()
-        let contentView = SimpleFlatAlert(title: "Title", message: "Messsage").setUpSingleAlert()
+        let contentView = AlertView(title: "Title", message: "Messsage").setUpSingleAlert()
+//        let contentView = SimpleFlatAlert(title: "Title", message: "Messsage").setUpSingleAlert()
         
         let view = self.alertView
 
@@ -113,7 +112,6 @@ extension Alert {
 extension Alert {
     
     class func show(_ vc: UIViewController, title: String, message: String, buttonTitle: String, handler: AlertAction?) {
-        
         let alert = Alert()
         alert.buttonType = .SingleButton(buttonTitle)
         alert.handler = handler
@@ -125,7 +123,6 @@ extension Alert {
     }
     
     class func show(_ vc: UIViewController, title: String, message: String, cancelTitle: String, acceptTitle: String, handler: AlertAction?) {
-
         let alert = Alert()        
         alert.buttonType = .DoubleButton(cancelTitle, acceptTitle)
         alert.handler = handler

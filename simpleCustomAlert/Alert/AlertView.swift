@@ -1,10 +1,4 @@
-//
-//  AlertView.swift
-//  simpleCustomAlert
-//
-//  Created by 加賀谷諒 on 2017/08/17.
-//  Copyright © 2017年 ryo kagaya. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -15,7 +9,6 @@ class AlertView: Alert {
     var messageText: String
     var accept: String
     var cancel: String
-    
 
     init(title: String, message: String, accept: String = "OK", cancel: String = "Cancel") {
         self.titleText = title

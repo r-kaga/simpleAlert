@@ -5,7 +5,7 @@
 
 #### SingleAlert
 
-![タイトル](simpleAlert/SingleFromSB.PNG)
+![タイトル](https://github.com/r-kaga/simpleAlert/blob/master/SingleFromSB.PNG)
 
 ```
 SingleAlert.show(self, title: "タイトル", message: "メッセージを\n表示しています") { action in
